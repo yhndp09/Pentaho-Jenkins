@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Run Pentaho Job') {
+        stage('Run ETL Step by Step') {
             steps {
-                bat 'jenkins\\run_job.bat'
+                bat 'jenkins\\run_all.bat'
             }
         }
     }
