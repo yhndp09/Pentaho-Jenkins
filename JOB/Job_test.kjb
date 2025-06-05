@@ -345,7 +345,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:\Users\yohanes.pratama\Desktop\Pentaho-Git\ETL\Transformation\get_data.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}/../Transformation/get_data.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
