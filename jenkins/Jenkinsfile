@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Run ETL Step by Step') {
             steps {
@@ -9,3 +8,4 @@ pipeline {
             }
         }
     }
+}
