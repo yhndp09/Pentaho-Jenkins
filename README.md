@@ -9,8 +9,16 @@ New Item > Pipeline , Lalu setup seperti contoh dibawah ini:
 
 
 # Jalankan Projek ini di PC atau server lain:
-Buka path: 
-1. Pentaho-Jenkins/jenkins/run_transformation.bat <br>
-   ubah set PDI_HOME=**C:\Users\yohanes.pratama\Desktop\PENTAHO ** sesuai directory dimana Kitchen.bat pentaho disimpan di lokal komputer (umumnya terletak di directory yang sama dengan file spoon)
-2. Pentaho-Jenkins/jenkins/jenkins/run_job.bat <br>
-   ubah set PDI_HOME=**C:\Users\yohanes.pratama\Desktop\PENTAHO ** sesuai directory dimana Kitchen.bat pentaho disimpan di lokal komputer (umumnya terletak di directory yang sama dengan file spoon)
+1. Buka path: 
+   1. Pentaho-Jenkins/jenkins/run_transformation.bat <br>
+      ubah set PDI_HOME=**C:\Users\yohanes.pratama\Desktop\PENTAHO ** sesuai directory dimana Kitchen.bat pentaho disimpan di lokal komputer (umumnya terletak di directory yang sama dengan file spoon)
+   2. Pentaho-Jenkins/jenkins/jenkins/run_job.bat <br>
+      ubah set PDI_HOME=**C:\Users\yohanes.pratama\Desktop\PENTAHO ** sesuai directory dimana Kitchen.bat pentaho disimpan di lokal komputer (umumnya terletak di directory yang sama dengan file spoon)
+
+2. Ubah koneksi DB yang dipake pentaho di folder job dan transformation
+   1. JOB
+      <br>
+![image](https://github.com/user-attachments/assets/f0156cc3-0fec-428d-887e-90c9683a4dee)
+   3. Transformation
+      <br>
+![image](https://github.com/user-attachments/assets/7c484866-0f3e-4cf4-9f7b-3f63ab3aaac7)
