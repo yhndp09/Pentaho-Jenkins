@@ -1,0 +1,11 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Run ETL Step by Step') {
+            steps {
+                bat 'jenkins\\run_transformation.bat'
+                bat 'jenkins\\run_job.bat'
+            }
+        }
+    }
