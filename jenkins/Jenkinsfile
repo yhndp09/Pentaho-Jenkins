@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    triggers {
+        cron('H 7 * * *') 
+    }
+
+    stages {
+        stage('Checkout Source Code') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/yhndp09/Pentaho-Jenkins.git',
+                    credentialsId: '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' 
+            }
+        }
+
+        stage('Run Pentaho Job') {
+            steps {
+                bat 'jenkins\\run_job.bat'
+            }
+        }
+    }
+}
