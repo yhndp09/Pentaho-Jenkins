@@ -25,8 +25,4 @@ New Item > Pipeline , Lalu setup seperti contoh dibawah ini:
       <br>
 ![image](https://github.com/user-attachments/assets/7c484866-0f3e-4cf4-9f7b-3f63ab3aaac7)
       <br> password tanpa Encrypted  bisa ditulis langsung, misalnya:<br>
-<<<<<<< HEAD
       ```<password>mypassword123</password>```
-=======
-      ```<password>mypassword123</password>```
->>>>>>> cd2dd56eb6fbb4de008633212bc8661b1bca6f4b
