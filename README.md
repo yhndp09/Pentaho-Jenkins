@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/a075c33f-478a-4573-ace3-8eb865fa7b36)
+![image](https://github.com/user-attachments/assets/9574e906-6434-4ead-9a74-43b6ee6f2a60)
+
 
 # Setup Jenkins Project
 
