@@ -1,0 +1,13 @@
+-- View: raw.vw_transaksi_ppob
+
+-- DROP VIEW "raw".vw_transaksi_ppob;
+
+CREATE OR REPLACE VIEW "raw".vw_transaksi_ppob
+ AS
+ SELECT transaction_id,
+    raw.mask_string_random(source_account_number::text) AS masked_source_account_number
+   FROM raw.transaksi_ppob t;
+
+ALTER TABLE "raw".vw_transaksi_ppob
+    OWNER TO postgres;
+
