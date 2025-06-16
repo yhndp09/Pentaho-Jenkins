@@ -1,0 +1,40 @@
+-- FUNCTION: raw.mask_string_random(text, numeric)
+
+-- DROP FUNCTION IF EXISTS "raw".mask_string_random(text, numeric);
+
+CREATE OR REPLACE FUNCTION "raw".mask_string_random(
+	input text,
+	mask_ratio numeric DEFAULT 0.7)
+    RETURNS text
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+DECLARE
+    masked TEXT := '';
+    i INT;
+    len INT := char_length(input);
+    mask_count INT := round(len * mask_ratio);
+    mask_positions INT[];
+BEGIN
+    SELECT array_agg(pos) INTO mask_positions
+    FROM (
+        SELECT generate_series(1, len) AS pos
+        ORDER BY random()
+        LIMIT mask_count
+    ) sub;
+
+    FOR i IN 1..len LOOP
+        IF i = ANY(mask_positions) THEN
+            masked := masked || '*';
+        ELSE
+            masked := masked || substr(input, i, 1);
+        END IF;
+    END LOOP;
+
+    RETURN masked;
+END;
+$BODY$;
+
+ALTER FUNCTION "raw".mask_string_random(text, numeric)
+    OWNER TO postgres;
