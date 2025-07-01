@@ -403,7 +403,7 @@
       <description/>
       <type>SQL</type>
       <attributes/>
-      <sql>CALL "staging"."sp_refresh_transaksi_ppob"();</sql>
+      <sql>CALL "staging"."sp_refresh_transaksi_ppob"('accounting','ssms');</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
