@@ -971,7 +971,7 @@
     </partitioning>
     <connection>PG Lokal</connection>
     <schema>raw</schema>
-    <table>transaksi_ppob</table>
+    <table>accounting-ssms-transaksi_ppob</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
