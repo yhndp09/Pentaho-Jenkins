@@ -1,15 +1,24 @@
 pipeline {
-    agent any
-    environment {
-    PROJECT_DIR = "${WORKSPACE}@tmp"
+  agent any
+
+  environment {
+    PROJECT_DIR = "${WORKSPACE}"
   }
 
-    
-    stages {
-        stage('Run ETL Step by Step') {
-            steps {
-                bat 'jenkins\\run_job.bat'
-            }
-        }
+  stages {
+    stage('Run ETL Step by Step') {
+      steps {
+        bat 'jenkins\\run_job.bat'
+      }
     }
+
+    stage('Cleanup') {
+      steps {
+        bat """
+          echo Cleaning up workspace...
+          rd /s /q "${WORKSPACE}"
+        """
+      }
+    }
+  }
 }
