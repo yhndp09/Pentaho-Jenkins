@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+    environment {
+    PROJECT_DIR = "${WORKSPACE}@tmp"
+  }
+    
     stages {
         stage('Run ETL Step by Step') {
             steps {
