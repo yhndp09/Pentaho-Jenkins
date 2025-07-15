@@ -11,14 +11,21 @@ pipeline {
         bat 'jenkins\\run_job.bat'
       }
     }
+  }
 
-    stage('Cleanup') {
-      steps {
-        bat """
-          echo Cleaning up workspace...
-          rd /s /q "${WORKSPACE}"
-        """
-      }
+  post {
+    always {
+      bat """
+        echo Cleaning up workspace contents...
+
+        REM Hapus semua file di root
+        del /f /q "${WORKSPACE}\\*"
+
+        REM Hapus semua subfolder
+        for /d %%x in ("${WORKSPACE}\\*") do rd /s /q "%%x"
+
+        echo Cleanup complete.
+      """
     }
   }
 }
